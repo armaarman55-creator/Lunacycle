@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BloomCycle – Download</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: #FFF6F8; color: #2d1a22; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    .petal-bg {
+      background: radial-gradient(ellipse at 20% 10%, #fce4ec 0%, transparent 55%),
+                  radial-gradient(ellipse at 80% 90%, #f8bbd0 0%, transparent 55%),
+                  radial-gradient(ellipse at 60% 20%, #fce4ec 0%, transparent 40%),
+                  #FFF6F8;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+      filter: blur(40px);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .download-btn {
+      background: linear-gradient(135deg, #e91e8c 0%, #c2185b 100%);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 32px rgba(233,30,140,0.35);
+    }
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(233,30,140,0.45);
+    }
+    .download-btn:active { transform: translateY(0); }
+
+    .feature-card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(233,30,140,0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(233,30,140,0.12);
+    }
+
+    .phone-mockup {
+      background: linear-gradient(160deg, #fff0f5, #ffe4ef);
+      border: 2px solid rgba(233,30,140,0.15);
+    }
+
+    .step-line::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      width: 2px;
+      height: 32px;
+      background: linear-gradient(to bottom, #e91e8c44, transparent);
+      transform: translateX(-50%);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(3deg); }
+    }
+    @keyframes float2 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(-2deg); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .float-1 { animation: float 5s ease-in-out infinite; }
+    .float-2 { animation: float2 6.5s ease-in-out infinite; }
+    .fade-up { animation: fadeUp 0.7s ease forwards; }
+    .delay-1 { animation-delay: 0.15s; opacity: 0; }
+    .delay-2 { animation-delay: 0.3s; opacity: 0; }
+    .delay-3 { animation-delay: 0.45s; opacity: 0; }
+
+    .badge {
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      color: #880e4f;
+      border: 1px solid rgba(233,30,140,0.2);
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(233,30,140,0.1);
+    }
+  </style>
+</head>
+<body class="petal-bg min-h-screen overflow-x-hidden">
+
+  <!-- Decorative blobs -->
+  <div class="blob w-96 h-96 bg-pink-200 top-0 -left-24" style="position:fixed;z-index:0;"></div>
+  <div class="blob w-72 h-72 bg-rose-200 bottom-10 right-0" style="position:fixed;z-index:0;"></div>
+
+  <div class="relative z-10">
+
+    <!-- Nav -->
+    <nav class="flex items-center justify-between px-6 py-5 max-w-5xl mx-auto">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🌸</span>
+        <span class="font-bold text-xl" style="font-family:'Playfair Display',serif; color:#c2185b;">BloomCycle</span>
+      </div>
+      <span class="badge text-xs font-semibold px-3 py-1 rounded-full">v1.0 · Android</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-5xl mx-auto px-6 pt-12 pb-20 text-center">
+
+      <div class="float-1 text-6xl mb-6 inline-block">🌸</div>
+
+      <h1 class="fade-up text-5xl md:text-6xl font-black leading-tight mb-5" style="color:#880e4f;">
+        Track your cycle,<br/>
+        <span style="color:#e91e8c;">know your body.</span>
+      </h1>
+
+      <p class="fade-up delay-1 text-lg md:text-xl text-rose-800/70 max-w-xl mx-auto mb-10 leading-relaxed">
+        BloomCycle helps you log periods, track symptoms, and understand your cycle — beautifully and privately.
+      </p>
+
+      <!-- Stats row -->
+      <div class="fade-up delay-2 flex justify-center gap-6 mb-12 flex-wrap">
+        <div class="stat-card rounded-2xl px-6 py-3 text-center">
+          <div class="text-2xl font-bold" style="color:#e91e8c;">Free</div>
+          <div class="text-xs text-rose-700/60 mt-0.5">Always</div>
+        </div>
+        <div class="stat-card rounded-2xl px-6 py-3 text-center">
+          <div class="text-2xl font-bold" style="color:#e91e8c;">0</div>
+          <div class="text-xs text-rose-700/60 mt-0.5">Ads</div>
+        </div>
+        <div class="stat-card rounded-2xl px-6 py-3 text-center">
+          <div class="text-2xl font-bold" style="color:#e91e8c;">100%</div>
+          <div class="text-xs text-rose-700/60 mt-0.5">Private</div>
+        </div>
+      </div>
+
+      <!-- Download button -->
+      <div class="fade-up delay-3">
+        <a href="app-release.apk" download class="download-btn inline-flex items-center gap-3 text-white font-semibold text-lg px-10 py-4 rounded-2xl no-underline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+          </svg>
+          Download APK
+        </a>
+        <p class="text-sm text-rose-700/50 mt-3">Android 6.0+ · ~18 MB · No Play Store needed</p>
+      </div>
+    </section>
+
+    <!-- Phone mockup + features -->
+    <section class="max-w-5xl mx-auto px-6 pb-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+
+        <!-- Phone mockup -->
+        <div class="flex justify-center">
+          <div class="phone-mockup rounded-[40px] w-64 h-[500px] flex flex-col items-center justify-start pt-8 px-4 shadow-2xl relative overflow-hidden">
+            <!-- Notch -->
+            <div class="w-20 h-6 bg-white/60 rounded-full mb-6"></div>
+            <!-- Screen content preview -->
+            <div class="w-full space-y-3">
+              <div class="bg-white/80 rounded-2xl p-3">
+                <div class="text-xs text-rose-400 font-semibold mb-1">CURRENT PHASE</div>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🌸</span>
+                  <span class="font-bold text-rose-900">Follicular</span>
+                </div>
+                <div class="text-xs text-rose-700/60 mt-1">Energy rising, great time to start new things</div>
+              </div>
+              <div class="grid grid-cols-3 gap-2">
+                <div class="bg-white/80 rounded-xl p-2 text-center">
+                  <div class="text-lg font-bold" style="color:#e91e8c;">28</div>
+                  <div class="text-[9px] text-rose-700/60">Avg days</div>
+                </div>
+                <div class="bg-white/80 rounded-xl p-2 text-center">
+                  <div class="text-lg font-bold" style="color:#e91e8c;">in 14d</div>
+                  <div class="text-[9px] text-rose-700/60">Next period</div>
+                </div>
+                <div class="bg-white/80 rounded-xl p-2 text-center">
+                  <div class="text-lg font-bold" style="color:#e91e8c;">in 7d</div>
+                  <div class="text-[9px] text-rose-700/60">Ovulation</div>
+                </div>
+              </div>
+              <div class="bg-white/80 rounded-2xl p-3">
+                <div class="text-xs text-amber-600 font-semibold mb-1">🔔 DAILY TIP</div>
+                <div class="text-xs text-rose-900">Stay hydrated and embrace light movement today.</div>
+              </div>
+              <div class="bg-white/80 rounded-2xl p-3">
+                <div class="text-xs text-rose-400 font-semibold mb-2">QUICK LOG</div>
+                <div class="grid grid-cols-4 gap-1">
+                  <div class="text-center"><div class="text-lg">🩸</div><div class="text-[8px] text-rose-700/60">Period</div></div>
+                  <div class="text-center"><div class="text-lg">😊</div><div class="text-[8px] text-rose-700/60">Mood</div></div>
+                  <div class="text-center"><div class="text-lg">🤕</div><div class="text-[8px] text-rose-700/60">Symptoms</div></div>
+                  <div class="text-center"><div class="text-lg">📝</div><div class="text-[8px] text-rose-700/60">Notes</div></div>
+                </div>
+              </div>
+            </div>
+            <!-- Decorative petal -->
+            <div class="absolute -bottom-4 -right-4 text-7xl opacity-20 float-2">🌸</div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold mb-6" style="color:#880e4f;">Everything you need</h2>
+
+          <div class="feature-card rounded-2xl p-5 flex gap-4">
+            <span class="text-3xl">📅</span>
+            <div>
+              <h3 class="text-base font-semibold text-rose-900 mb-1">Cycle Predictions</h3>
+              <p class="text-sm text-rose-700/70 leading-relaxed">Smart predictions for your next period and ovulation based on your personal data.</p>
+            </div>
+          </div>
+
+          <div class="feature-card rounded-2xl p-5 flex gap-4">
+            <span class="text-3xl">😊</span>
+            <div>
+              <h3 class="text-base font-semibold text-rose-900 mb-1">Mood & Symptom Tracking</h3>
+              <p class="text-sm text-rose-700/70 leading-relaxed">Log how you feel each day and spot patterns across your cycle phases.</p>
+            </div>
+          </div>
+
+          <div class="feature-card rounded-2xl p-5 flex gap-4">
+            <span class="text-3xl">✨</span>
+            <div>
+              <h3 class="text-base font-semibold text-rose-900 mb-1">Phase Insights</h3>
+              <p class="text-sm text-rose-700/70 leading-relaxed">Understand what each phase means for your energy, mood, and body.</p>
+            </div>
+          </div>
+
+          <div class="feature-card rounded-2xl p-5 flex gap-4">
+            <span class="text-3xl">🔒</span>
+            <div>
+              <h3 class="text-base font-semibold text-rose-900 mb-1">100% Private</h3>
+              <p class="text-sm text-rose-700/70 leading-relaxed">Your data stays on your device. No accounts required, no data sold.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to install -->
+    <section class="max-w-3xl mx-auto px-6 pb-24 text-center">
+      <h2 class="text-3xl font-bold mb-2" style="color:#880e4f;">How to install</h2>
+      <p class="text-rose-700/60 mb-12 text-sm">Takes less than a minute</p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="relative">
+          <div class="feature-card rounded-2xl p-6 relative step-line">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm mb-4 mx-auto download-btn" style="box-shadow:none;">1</div>
+            <h3 class="font-semibold text-rose-900 mb-2">Download the APK</h3>
+            <p class="text-sm text-rose-700/60">Tap the download button above to save the APK file to your phone.</p>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="feature-card rounded-2xl p-6 relative step-line">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm mb-4 mx-auto download-btn" style="box-shadow:none;">2</div>
+            <h3 class="font-semibold text-rose-900 mb-2">Allow Unknown Sources</h3>
+            <p class="text-sm text-rose-700/60">Go to Settings → Security → enable <em>Install unknown apps</em> for your browser.</p>
+          </div>
+        </div>
+
+        <div class="feature-card rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm mb-4 mx-auto download-btn" style="box-shadow:none;">3</div>
+          <h3 class="font-semibold text-rose-900 mb-2">Open & Install</h3>
+          <p class="text-sm text-rose-700/60">Open the downloaded file from your notifications or file manager and tap Install.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-rose-200/50 py-10 text-center text-sm text-rose-700/50">
+      <span class="text-2xl">🌸</span>
+      <p class="mt-2 font-semibold text-rose-800/70">BloomCycle · v1.0.0</p>
+      <p class="mt-1">Built by <span class="font-semibold text-rose-700">Diswayne Maarman</span> · <span class="text-rose-600/70">Diswayne Tech Systems</span></p>
+      <a href="mailto:support@getdiswayne.com" class="inline-block mt-2 text-rose-500 hover:text-rose-700 transition-colors">
+        support@getdiswayne.com
+      </a>
+      <p class="mt-4 text-xs text-rose-700/30">© 2026 Diswayne Tech Systems. All rights reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
